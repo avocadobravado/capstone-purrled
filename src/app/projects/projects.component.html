@@ -1,0 +1,4 @@
+
+<div *ngFor="let project of projects | async" (click)="goToDetailPage(project)">
+    <h3><em>{{project.name}}</em> Difficulty: {{project.skill}}</h3>
+</div>

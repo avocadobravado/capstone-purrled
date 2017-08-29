@@ -1,0 +1,23 @@
+{ "projects": [{
+    "name": "Honeycowl",
+    "skill": "Beginner",
+    "yarnAmount": "220",
+    "yarnWeight": "Worsted",
+    "needleSize": "6",
+    "patternInfo": "K2 P2 until oblivion"
+    }, {
+    "name": "Hobbit Scarf",
+    "skill": "Intermediate",
+    "yarnAmount": "550",
+    "yarnWeight": "Aran",
+    "needleSize": "4",
+    "patternInfo": "K2 P2 until oblivion"
+      }, {
+    "name": "Swiss Mitts",
+    "skill": "Advanced",
+    "yarnAmount": "300",
+    "yarnWeight": "Chunky",
+    "needleSize": "9",
+    "patternInfo": "K2 P2 until oblivion"
+  }]
+}

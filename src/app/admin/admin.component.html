@@ -1,0 +1,40 @@
+<h3>Add New Project</h3>
+<div>
+  <div>
+    <label>Project Name:</label>
+    <br>
+    <input #newName>
+  </div>
+
+  <div>
+    <label>Skill level:</label>
+    <br>
+    <input #newSkill>
+  </div>
+
+  <div>
+    <label>Yards of yarn:</label>
+    <br>
+    <input #newYarnAmount>
+  </div>
+
+  <div>
+    <label>Yarn weight:</label>
+    <br>
+    <input #newYarnWeight>
+  </div>
+
+  <div>
+    <label>Needle size:</label>
+    <br>
+    <input #newNeedleSize>
+  </div>
+
+  <div>
+    <label>Pattern details:</label>
+    <br>
+    <textarea #newPatternInfo></textarea>
+  </div>
+
+  <button (click)="submitForm(newName.value, newSkill.value, newYarnAmount.value, newYarnWeight.value, newNeedleSize.value, newPatternInfo.value)">Add</button>
+</div>
