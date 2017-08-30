@@ -1,3 +1,31 @@
-<p>
-  edit-project works!
-</p>
+<label>Project name:</label>
+<input [(ngModel)]="selectedProject.name">
+<br>
+
+<label>Project skill level:</label>
+<input [(ngModel)]="selectedProject.skill">
+<br>
+
+<label>Project yarn amount:</label>
+<input [(ngModel)]="selectedProject.yarnAmount">
+<br>
+
+<label>Project yarn weight:</label>
+<input [(ngModel)]="selectedProject.yarnWeight">
+<br>
+
+
+<label>Project needle size:</label>
+<input [(ngModel)]="selectedProject.needleSize">
+<br>
+
+
+<label>Project pattern:</label>
+<input [(ngModel)]="selectedProject.patternInfo">
+<br>
+
+<input [(ngModel)]="selectedProject.description">
+
+<button (click)="beginUpdatingProject(selectedProject)">Update</button>
+
+<button (click)="beginDeletingProject(selectedProject)">Delete</button>

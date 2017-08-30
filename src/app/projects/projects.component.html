@@ -1,4 +1,8 @@
+<div *ngFor="let project of projects | async">
+ <h3 (click)="goToDetailPage(project)">
+ <em>{{project.name}}</em> Difficulty: {{project.skill}}</h3>
 
-<div *ngFor="let project of projects | async" (click)="goToDetailPage(project)">
-    <h3><em>{{project.name}}</em> Difficulty: {{project.skill}}</h3>
+ <div *ngIf="currentRoute === '/admin'">
+   <app-edit-project [selectedProject]="project"></app-edit-project>
+ </div>
 </div>
