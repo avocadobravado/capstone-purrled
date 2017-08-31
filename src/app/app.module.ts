@@ -12,8 +12,11 @@ import { ProjectDetailComponent } from './project-detail/project-detail.componen
 
 //firebase
 import { masterFirebaseConfig } from './api-keys';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
+import {
+  AngularFireModule
+} from "angularfire2";
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule} from 'angularfire2/database';
 import { AdminComponent } from './admin/admin.component';
 import { EditProjectComponent } from './edit-project/edit-project.component';
 
@@ -41,7 +44,8 @@ export const firebaseConfig = {
     HttpModule,
     routing,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,3 +3,8 @@
 </h1>
 <a routerLink="friends">Friends page</a> / <a routerLink="">landing</a> / <a routerLink="projects">Projects page</a> / <a routerLink="admin">Admin</a>
 <router-outlet></router-outlet>
+
+<div class="row columns">
+  <button (click)="login()" *ngIf="!(user | async)?.uid"> Login</button>
+  <button (click)="logout()" *ngIf="(user | async)?.uid">Logout</button>
+</div>
