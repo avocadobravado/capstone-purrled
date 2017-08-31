@@ -1,0 +1,49 @@
+// <nav>
+//   <div class="nav-wrapper">
+//     <ul class="left">
+//       <li><a href="#">Purrled</a></li>
+//     </ul>
+//     <ul class="right">
+//       <li><a href="#">Sign in</a></li>
+//     </ul>
+//   </div>
+// </nav>
+
+
+
+nav {
+  padding-top: 10px;
+  background-color: $pink;
+  height: 50px;
+  li {
+    color: white;
+    cursor: pointer;
+  }
+  a {
+    color: #fff;
+    font-size: 30px;
+  }
+  .nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 90%;
+    margin: 0 auto;
+    .right {
+      font-size: 18px;
+      a {
+        font-size: 18px;
+      }
+      .nav-links {
+        display: flex;
+        li {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}
+
+.search {
+  background-color: white;
+}
