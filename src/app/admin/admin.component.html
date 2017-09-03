@@ -1,6 +1,12 @@
 <h3>Add New Project</h3>
 <div>
   <div>
+    <label>Your Name:</label>
+    <br>
+    <input #yourName>
+  </div>
+
+  <div>
     <label>Project Name:</label>
     <br>
     <input #newName>
@@ -36,7 +42,7 @@
     <textarea #newPatternInfo></textarea>
   </div>
 
-  <button (click)="submitForm(newName.value, newSkill.value, newYarnAmount.value, newYarnWeight.value, newNeedleSize.value, newPatternInfo.value)">Add</button>
+  <button (click)="submitForm(yourName.value, newName.value, newSkill.value, newYarnAmount.value, newYarnWeight.value, newNeedleSize.value, newPatternInfo.value)">Add</button>
 </div>
 
 <div>

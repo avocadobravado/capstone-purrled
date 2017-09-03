@@ -1,10 +1,31 @@
-<h1>
-  Purrled
-</h1>
-<a routerLink="friends">Friends page</a> / <a routerLink="">landing</a> / <a routerLink="projects">Projects page</a> / <a routerLink="admin">Admin</a>
+<nav>
+  <div class="nav-wrapper">
+    <ul class="left">
+      <li><a routerLink="">Purrled</a> </li>
+    </ul>
+    <ul class="right">
+      <div class="nav-links">
+        <li *ngIf="(user | async)?.uid"><a routerLink="projects">Projects</a></li>
+        <li *ngIf="(user | async)?.uid"><a routerLink="friends">Friends</a></li>
+        <li *ngIf="(user | async)?.uid"><a routerLink="admin">Add New</a></li>
+        <li *ngIf="(user | async)?.uid"><a routerLink="profile">Profile</a></li>
+        <li (click)="login()" *ngIf="!(user | async)?.uid">Login</li>
+        <li (click)="logout()" *ngIf="(user | async)?.uid">Logout</li>
+      </div>
+    </ul>
+  </div>
+</nav>
+<div class="search" *ngIf="(user | async)?.uid">
+  <form class="search-form">
+    <input type="text" name="" value="" placeholder="Search projects">
+    <input type="checkbox" name="skill" value="beginner">Beginner
+    <input type="checkbox" name="skill" value="intermediate">Intermediate
+    <input type="checkbox" name="skill" value="advanced">Advanced
+    <button type="submit" name="button" class="search-button">Search</button>
+  </form>
+</div>
+
 <router-outlet></router-outlet>
 
-<div class="row columns">
-  <button (click)="login()" *ngIf="!(user | async)?.uid"> Login</button>
-  <button (click)="logout()" *ngIf="(user | async)?.uid">Logout</button>
-</div>
+<app-home *ngIf="(user | async)?.uid"></app-home>
+<app-landing *ngIf="!(user | async)?.uid"></app-landing>

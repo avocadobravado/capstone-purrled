@@ -1,3 +1,24 @@
+#Notes
+
+**Components:**
+* Upload
+* Search
+
+**Services:**
+* AuthenticationGuard: 
+* Upload service
+* Authentication
+* Image detail
+* Search
+* Profile service for viewing a profile and changing own profile
+* Adding new project
+
+**Not that important:**
+* Friends service for returning friend info
+* edit own profile avatar
+* deleting own account
+* delete project
+
 # Purrled
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.

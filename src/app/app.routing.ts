@@ -5,10 +5,11 @@ import { AdminComponent } from './admin/admin.component';
 import { FriendsComponent } from './friends/friends.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const appRoutes: Routes = [
   {
-    path: '',
+    path: 'landing',
     component: LandingComponent
   },
   {
@@ -26,6 +27,10 @@ const appRoutes: Routes = [
   {
   path: 'admin',
   component: AdminComponent
+  },
+  {
+  path: 'profile',
+  component: ProfileComponent
   }
 ];
 
