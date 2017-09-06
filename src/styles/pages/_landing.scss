@@ -1,12 +1,16 @@
 .landing-wrapper {
   background: url('../assets/landing-background.png');
-  height: 87vh;
+  height: 90%;
   margin-top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  h3, p {
+    margin: 0;
+  }
   p {
     margin: 0;
+    color: $pink;
   }
   .landing-container {
     margin: 0 auto;
@@ -15,10 +19,30 @@
     width: 60%;
     max-width: 500px;
     border-radius: 10px;
+    box-shadow: 5px 5px 50px 5px darken($teal, 20%);
+    text-align: center;
     img {
       margin: 0 auto 20px auto;
       width: 35%;
       display: block;
+    }
+    .signup {
+      background-color: $pink;
+      color: #fff;
+      padding: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 20%;
+      margin: 20px auto;
+      border-bottom: 3px solid darken($pink, 5%);
+      transition: $transition;
+      &:active {
+        transform: translateY(-3px);
+        border-bottom: 1px solid $pink;
+      }
     }
   }
 }

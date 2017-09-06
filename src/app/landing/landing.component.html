@@ -4,7 +4,9 @@
       <img src="assets/logo-lg-pink.svg" alt="Purrled logo">
       <img src="assets/cat.png" alt="Cat with yarn">
       <h3>An online community for knitters</h3>
-      <a href="#">Sign up</a>
+      <div class="signup-wrapper">
+        <p (click)="login()" *ngIf="!isLoggedIn" class="signup">Sign up</p>
+      </div>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
     </div>
   </div>
