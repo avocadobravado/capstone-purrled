@@ -14,7 +14,7 @@
 nav {
   padding-top: 10px;
   background-color: $pink;
-  height: 50px;
+  height: 55px;
   li {
     color: white;
     cursor: pointer;
@@ -26,7 +26,7 @@ nav {
   .nav-wrapper {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     width: 90%;
     margin: 0 auto;
     .right {
