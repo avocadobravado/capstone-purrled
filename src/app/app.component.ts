@@ -1,61 +1,47 @@
 import { Component } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { Router } from '@angular/router';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase/app';
-import { Profile } from './profile.model';
-import { ProfileService } from './profile.service';
+import { Profile } from './models/profile.model';
+import { ProfileService } from './services/profile.service';
+import { AuthenticationService } from './services/authentication.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers: [ProfileService]
+  providers: [ProfileService, AuthenticationService]
 })
 export class AppComponent {
-  user: Observable<firebase.User>;
-  items: FirebaseListObservable<any[]>;
-  addProfile: FirebaseListObservable<any[]>;
+  user;
 
-  constructor(public afAuth: AngularFireAuth, public af: AngularFireDatabase) {
-    this.user = this.afAuth.authState;
+  private isLoggedIn: Boolean;
+  private userName: String;
 
-  }
-
-  login() {
-    var provider = new firebase.auth.GoogleAuthProvider();
-
-    // this.afAuth.auth.signInAnonymously();
-    firebase.auth().signInWithRedirect(provider).then(function(result) {
-  // This gives you a Google Access Token. You can use it to access the Google API.
-    var token = result.credential.accessToken;
-  // The signed-in user info.
-    var user = result.user;
-
-    var queryObservable = this.database.list('/profiles', {
-      query: {
-        orderByChild: 'uid',
-        equalTo: user.uid
+  constructor(public authService: AuthenticationService) {
+    this.authService.user.subscribe(user => {
+      if (user == null) {
+        this.isLoggedIn = false;
+      } else {
+        this.isLoggedIn = true;
+        this.userName = user.displayName;
       }
     });
-    // if(queryObservable.length < 1) {
-      this.profileService.addProfile(new Profile (user.uid, this.bio,
-        this.favorites, this.friends));
-    // }
-
-  });//.catch(function(error) {
-    // Handle Errors here.
-    // var errorCode = error.code;
-    // var errorMessage = error.message;
-    // // The email of the user's account used.
-    // var email = error.email;
-    // // The firebase.auth.AuthCredential type that was used.
-    // var credential = error.credential;
-    // ...
-  //});
-}
-
-  logout() {
-    this.afAuth.auth.signOut();
   }
+
+login() {
+  this.authService.login();
 }
+
+logout() {
+  this.authService.logout();
+}
+  // constructor(private authService: AuthenticationService, private router: Router) { }
+  //
+  // signIn() {
+  //   this.authService.login();
+      // .then(resolve => this.router.navigate(['friends']))
+      // .catch(error => this.errorMsg = error.message);
+  }

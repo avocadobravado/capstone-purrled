@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Project } from '../project.model';
-import {ProjectService} from '../project.service';
+import { Project } from '../models/project.model';
+import {ProjectService} from '../services/project.service';
 import { FirebaseObjectObservable } from 'angularfire2/database';
 
 @Component({

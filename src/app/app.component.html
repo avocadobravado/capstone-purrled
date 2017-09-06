@@ -5,17 +5,17 @@
     </ul>
     <ul class="right">
       <div class="nav-links">
-        <li *ngIf="(user | async)?.uid"><a routerLink="projects">Projects</a></li>
-        <li *ngIf="(user | async)?.uid"><a routerLink="friends">Friends</a></li>
-        <li *ngIf="(user | async)?.uid"><a routerLink="admin">Add New</a></li>
-        <li *ngIf="(user | async)?.uid"><a routerLink="profile">Profile</a></li>
-        <li (click)="login()" *ngIf="!(user | async)?.uid">Login</li>
-        <li (click)="logout()" *ngIf="(user | async)?.uid">Logout</li>
+        <li *ngIf="isLoggedIn"><a routerLink="projects">Projects</a></li>
+        <li *ngIf="isLoggedIn"><a routerLink="friends">Friends</a></li>
+        <li *ngIf="isLoggedIn"><a routerLink="admin">Add New</a></li>
+        <li *ngIf="isLoggedIn"><a routerLink="profile">Profile</a></li>
+        <li (click)="login()" *ngIf="!isLoggedIn">Login</li>
+        <li (click)="logout()" *ngIf="isLoggedIn">Logout</li>
       </div>
     </ul>
   </div>
 </nav>
-<div class="search" *ngIf="(user | async)?.uid">
+<div class="search" *ngIf="isLoggedIn">
   <form class="search-form">
     <input type="text" name="" value="" placeholder="Search projects">
     <input type="checkbox" name="skill" value="beginner">Beginner
@@ -27,5 +27,5 @@
 
 <router-outlet></router-outlet>
 
-<app-home *ngIf="(user | async)?.uid"></app-home>
-<app-landing *ngIf="!(user | async)?.uid"></app-landing>
+<app-home *ngIf="isLoggedIn"></app-home>
+<app-landing *ngIf="!isLoggedIn"></app-landing>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Project } from './project.model';
+import { Project } from '../models/project.model';
 import { AngularFireModule} from 'angularfire2';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 

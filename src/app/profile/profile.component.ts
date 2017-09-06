@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
-import { ProjectService } from '../project.service';
-import { Profile } from '../profile.model';
-import { Project } from '../project.model';
+import { ProjectService } from '../services/project.service';
+import { Profile } from '../models/profile.model';
+import { Project } from '../models/project.model';
 import { FirebaseListObservable } from 'angularfire2/database';
 import { Router } from '@angular/router';
 
