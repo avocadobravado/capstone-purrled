@@ -9,7 +9,7 @@
         <li *ngIf="isLoggedIn"><a routerLink="friends">Friends</a></li>
         <li *ngIf="isLoggedIn"><a routerLink="admin">Add New</a></li>
         <li *ngIf="isLoggedIn"><a routerLink="profile">Profile</a></li>
-        <li (click)="login()" *ngIf="!isLoggedIn">Login</li>
+        <li (click)="login()" *ngIf="!isLoggedIn" class="login">Login</li>
         <li (click)="logout()" *ngIf="isLoggedIn">Logout</li>
       </div>
     </ul>

@@ -40,6 +40,15 @@ nav {
           margin-right: 20px;
         }
       }
+      .login {
+        padding: 10px 15px;
+        border: 1px solid #fff;
+        border-radius: 15px;
+        transition: $transition;
+        &:hover {
+          opacity: $opacity;
+        }
+      }
     }
   }
 }

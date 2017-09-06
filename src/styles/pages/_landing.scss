@@ -2,7 +2,23 @@
   background: url('../assets/landing-background.png');
   height: 87vh;
   margin-top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   p {
     margin: 0;
+  }
+  .landing-container {
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    width: 60%;
+    max-width: 500px;
+    border-radius: 10px;
+    img {
+      margin: 0 auto 20px auto;
+      width: 35%;
+      display: block;
+    }
   }
 }
