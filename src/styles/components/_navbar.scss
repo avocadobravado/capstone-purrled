@@ -29,6 +29,14 @@ nav {
     align-items: center;
     width: 90%;
     margin: 0 auto;
+    .left {
+      .logo {
+        transition: $transition;
+        &:hover {
+          opacity: $opacity;
+        }
+      }
+    }
     .right {
       font-size: 18px;
       a {
