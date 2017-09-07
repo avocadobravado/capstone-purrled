@@ -17,8 +17,8 @@ import { AuthenticationService } from './services/authentication.service';
 export class AppComponent {
   user;
 
-  private isLoggedIn: Boolean;
-  private userName: String;
+  private isLoggedIn: boolean;
+  private userName: string;
 
   constructor(public authService: AuthenticationService) {
     this.authService.user.subscribe(user => {
@@ -31,17 +31,11 @@ export class AppComponent {
     });
   }
 
-login() {
-  this.authService.login();
-}
+    login() {
+      this.authService.login();
+    }
 
-logout() {
-  this.authService.logout();
-}
-  // constructor(private authService: AuthenticationService, private router: Router) { }
-  //
-  // signIn() {
-  //   this.authService.login();
-      // .then(resolve => this.router.navigate(['friends']))
-      // .catch(error => this.errorMsg = error.message);
+    logout() {
+      this.authService.logout();
+    }
   }

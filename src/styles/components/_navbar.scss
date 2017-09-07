@@ -1,20 +1,9 @@
-// <nav>
-//   <div class="nav-wrapper">
-//     <ul class="left">
-//       <li><a href="#">Purrled</a></li>
-//     </ul>
-//     <ul class="right">
-//       <li><a href="#">Sign in</a></li>
-//     </ul>
-//   </div>
-// </nav>
-
-
-
 nav {
   padding-top: 10px;
   background-color: $pink;
-  height: 55px;
+  height: 60px;
+  box-shadow: 10px 10px 10px red;
+  // border-bottom: 10px solid black;
   li {
     color: white;
     cursor: pointer;

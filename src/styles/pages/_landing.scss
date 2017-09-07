@@ -8,6 +8,9 @@
   h3, p {
     margin: 0;
   }
+  h3 {
+    font-size: 1.5em;
+  }
   p {
     margin: 0;
     color: $pink;
@@ -35,13 +38,17 @@
       text-transform: uppercase;
       border-radius: 5px;
       cursor: pointer;
-      width: 20%;
+      width: 100px;
       margin: 20px auto;
       border-bottom: 3px solid darken($pink, 5%);
       transition: $transition;
       &:active {
-        transform: translateY(-3px);
-        border-bottom: 1px solid $pink;
+        transform: translateY(3px);
+        border-bottom: 3px solid transparent;
+      }
+      &:hover {
+        box-shadow: 0 3px 15px 3px lighten($pink, 18%);
+        opacity: .95;
       }
     }
   }

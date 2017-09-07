@@ -3,7 +3,7 @@ body {
   font-family: $primary;
   font-weight: 300;
   color: $teal;
-  letter-spacing: 0.015em;
+  letter-spacing: 0.0125em;
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -11,6 +11,10 @@ body {
 
 a {
   text-decoration: none;
+  transition: $transition;
+  &:hover {
+    opacity: $opacity;
+  }
 }
 
 ul {
@@ -18,7 +22,6 @@ ul {
   padding: 0;
   margin: 0;
 }
-
 
 ::selection {
   background-color: $teal;
