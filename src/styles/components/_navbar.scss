@@ -1,9 +1,13 @@
 nav {
+  position: relative;
+  top: 0;
+  left: 0;
   padding-top: 10px;
   background-color: $pink;
   height: 60px;
-  box-shadow: 10px 10px 10px red;
-  // border-bottom: 10px solid black;
+  text-transform: uppercase;
+  letter-spacing: 0.075em;
+  box-shadow: 1px 1px 10px 1px darken($teal, 25%);
   li {
     color: white;
     cursor: pointer;
@@ -27,14 +31,20 @@ nav {
       }
     }
     .right {
-      font-size: 18px;
+      font-size: 15px;
       a {
-        font-size: 18px;
+        font-size: 15px;
       }
       .nav-links {
         display: flex;
         li {
           margin-right: 20px;
+        }
+      }
+      .login, .logout {
+        transition: $transition;
+        &:hover {
+          opacity: $opacity;
         }
       }
       .login {
@@ -43,7 +53,10 @@ nav {
         border-radius: 15px;
         transition: $transition;
         &:hover {
-          opacity: $opacity;
+          opacity: 1;
+          background-color: #fff;
+          color: $pink;
+          box-shadow: 1px 1px 30px 1px darken($pink, 6%);
         }
       }
     }
@@ -51,5 +64,5 @@ nav {
 }
 
 .search {
-  background: url(../assets/bg.png);
+  background: url('../assets/bg.png');
 }
