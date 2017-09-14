@@ -1,7 +1,7 @@
 export class Project {
   constructor (
     public userId: string,
-    public name: string,
+    public projectName: string,
     public skill: string,
     public yarnAmount: number,
     public yarnWeight: string,
