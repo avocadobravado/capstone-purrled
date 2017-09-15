@@ -1,7 +1,7 @@
 
 <div>
-  <h2>Posted by: {{(projectToDisplay | async).uid}}</h2>
-  <h3>Name: {{(projectToDisplay | async).name}}</h3>
+  <h2>Posted by: {{profileName}}</h2>
+  <h3>Name: {{(projectToDisplay | async).projectName}}</h3>
   <h4>Skill level: {{(projectToDisplay | async).skill}}</h4>
   <p>Amount of yarn: {{(projectToDisplay | async).yarnAmount}} yards</p>
   <p>Pattern: {{(projectToDisplay | async).patternInfo}}</p>

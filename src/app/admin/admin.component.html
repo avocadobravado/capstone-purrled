@@ -9,7 +9,7 @@
   <div>
     <label>Project Name:</label>
     <br>
-    <input #newName>
+    <input #newProjectName>
   </div>
 
   <div>
@@ -42,7 +42,7 @@
     <textarea #newPatternInfo></textarea>
   </div>
 
-  <button (click)="submitForm(yourName.value, newName.value, newSkill.value, newYarnAmount.value, newYarnWeight.value, newNeedleSize.value, newPatternInfo.value)">Add</button>
+  <button (click)="submitForm(newProjectName.value, newSkill.value, newYarnAmount.value, newYarnWeight.value, newNeedleSize.value, newPatternInfo.value)">Add</button>
 </div>
 
 <div>

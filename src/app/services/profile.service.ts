@@ -3,6 +3,7 @@ import { Project } from '../models/project.model';
 import { Profile } from '../models/profile.model';
 import { AngularFireModule} from 'angularfire2';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ProfileService {
@@ -16,14 +17,24 @@ export class ProfileService {
     return this.profiles;
   }
 
-  addProfile(newProfile: Profile) {
-   this.profiles.push(newProfile);
- }
+  addProfile(uid: string, name: string, photoURL: string) {
+   this.profiles.push(new Profile(uid, name, photoURL, '', [],[]));
+  }
 
- // Nice to have
- // getProfileByUID(profileName: string){
- //    return this.database.object('profiles/' + profileName);
- //  }
+  getProfileByUid(profileUid: string) : string {
+    // return this.database.object('profiles/' + profileName);
+    var profile: Profile;
+    this.database.list('/profiles', {
+      query: {
+        orderByChild: 'uid',
+        equalTo: profileUid,
+        limitToFirst: 1
+      }
+    }).subscribe(result => { if (result.length>0) {
+      return result[0].uid;
+    }});
+    return null;
+  }
 
  //  updateProfile(localUpdatedProfile){
  //   var projectEntryInFirebase = this.getProfileByUID(localUpdatedProject.$key);

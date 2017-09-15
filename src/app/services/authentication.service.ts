@@ -5,7 +5,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase/app';
 import { Project } from '../models/project.model';
-import { Profile } from '../models/profile.model';
+import { ProfileService } from '../services/profile.service';
 import { Router } from '@angular/router';
 
 @Injectable()
@@ -13,20 +13,19 @@ export class AuthenticationService {
   user: Observable<firebase.User>;
   displayName: string;
 
-  constructor(public afAuth: AngularFireAuth, private db: AngularFireDatabase, public router: Router) {
+  constructor(public afAuth: AngularFireAuth, private database: AngularFireDatabase, public router: Router, private profileService: ProfileService) {
     this.user = afAuth.authState;
-    var user = firebase.auth().currentUser;
-this.afAuth.authState.subscribe(
-    (auth) => {
-  if (auth != null) {
-    // this.user = db.list.object('users/' + auth.uid);
-  }
-});
   }
 
   login() {
     this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
 
+    // Create a new profile if necessary
+    this.user.subscribe(auth => {
+     if (auth !== undefined && auth !== null) {
+       this.createProfileIfNoneExists(auth);
+      }
+    });
   }
 
   logout() {
@@ -34,4 +33,29 @@ this.afAuth.authState.subscribe(
     this.router.navigate(['']);
   }
 
-}
+  // getUserName(uid: string) {
+  //   this.database.object('user/');
+  // }
+
+  getUserUid():string {
+    var userObject: firebase.User;
+    this.user.subscribe(auth => {
+     if (auth !== undefined && auth !== null) {
+       userObject = auth;
+      }
+    });
+    return userObject.uid;
+  }
+
+  createProfileIfNoneExists(user: firebase.User) {
+    this.database.list('/profiles', {
+      query: {
+        orderByChild: 'uid',
+        equalTo: user.uid,
+        limitToFirst: 1
+       }
+     }).subscribe(result => { if (result.length===0) {
+        this.profileService.addProfile(user.uid, user.displayName, user.photoURL);
+      }})
+    }
+  }
