@@ -1,0 +1,56 @@
+// Main projects
+
+
+// Project detail pages
+.project-detail {
+  @include grid-column(12);
+  h2 {
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing;
+  }
+  p {
+    color: $black;
+  }
+  .project-left {
+    @include grid-column(4);
+    .project-img {
+      margin-top: 20px;
+      max-width: 350px;
+      width: 100%;
+      border-radius: $radius;
+    }
+  }
+  .project-right {
+    @include grid-column(8);
+    h2 {
+      margin-top: 30px;
+    }
+    h3 {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      letter-spacing: $letter-spacing;
+      text-transform: uppercase;
+      font-weight: 100;
+      span {
+        color: $pink;
+        padding-right: 10px;
+      }
+    }
+    .project-icons {
+      p {
+        font-size: 18px;
+        margin: 10px;
+      }
+      strong {
+        color: $teal;
+      }
+      .project-icon {
+        width: 23px;
+        padding-right: 10px;
+        display: inline;
+      }
+    }
+  }
+}
