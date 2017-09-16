@@ -15,26 +15,35 @@ import { ProfileService } from '../services/profile.service';
 })
 
 export class ProjectDetailComponent implements OnInit {
+    // Project specific
     projectName;
-    profileName = "Bob";
     projectToDisplay;
 
+    // Profile name
+    profile;
+
     constructor(
-    private route: ActivatedRoute,
-    private location: Location,
-    private projectService: ProjectService,
-    private profileService: ProfileService
-  ) {}
+      private route: ActivatedRoute,
+      private location: Location,
+      private projectService: ProjectService,
+      private profileService: ProfileService
+    ) {}
 
     ngOnInit() {
       this.route.params.forEach((urlParameters) => {
         this.projectName = urlParameters['id'];
-    });
+      });
       this.projectToDisplay = this.projectService.getProjectByName(this.projectName);
 
-    // this.projectToDisplay.subscribe( result =>
-    // this.profileName = this.profileService.getProfileByUid(result.userId)
-    // );
-  }
+      this.projectToDisplay.subscribe( result => {
+        this.profileService.getProfileByUid(result.userId).
+          subscribe( profiles => {
+            if( profiles !== undefined ) {
+              this.profile = profiles[0];
+            }
+            console.log(this.profile);
+          });
+      });
 
+  }
 }

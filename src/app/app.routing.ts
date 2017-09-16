@@ -29,7 +29,7 @@ const appRoutes: Routes = [
   component: AdminComponent
   },
   {
-  path: 'profile',
+  path: 'profile/:uid',
   component: ProfileComponent
   }
 ];

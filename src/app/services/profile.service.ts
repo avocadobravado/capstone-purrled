@@ -2,8 +2,10 @@ import { Injectable } from '@angular/core';
 import { Project } from '../models/project.model';
 import { Profile } from '../models/profile.model';
 import { AngularFireModule} from 'angularfire2';
+import { Observable } from 'rxjs/Observable';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/first';
 
 @Injectable()
 export class ProfileService {
@@ -21,19 +23,14 @@ export class ProfileService {
    this.profiles.push(new Profile(uid, name, photoURL, '', [],[]));
   }
 
-  getProfileByUid(profileUid: string) : string {
-    // return this.database.object('profiles/' + profileName);
-    var profile: Profile;
-    this.database.list('/profiles', {
+  getProfileByUid(profileUid: string){
+    return this.database.list('/profiles', {
       query: {
         orderByChild: 'uid',
         equalTo: profileUid,
         limitToFirst: 1
       }
-    }).subscribe(result => { if (result.length>0) {
-      return result[0].uid;
-    }});
-    return null;
+    });
   }
 
  //  updateProfile(localUpdatedProfile){
