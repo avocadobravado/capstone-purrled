@@ -1,0 +1,11 @@
+@keyframes cat {
+  0% {
+    transform: skewX(0deg);
+  }
+  50% {
+    transform: skewX(.5deg);
+  }
+  100% {
+    transform: skewX(-.5deg);
+  }
+}

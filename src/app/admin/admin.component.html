@@ -1,54 +1,48 @@
 <div class="container">
+  <h2>Add New Project</h2>
+  <div class="sep"></div>
+    <div class="add-project">
+      <div>
+        <label>Project Name:</label>
+        <br>
+        <input #newProjectName>
+      </div>
 
-<h3>Add New Project</h3>
-<div>
-  <!-- <div>
-    <label>Your Name:</label>
-    <br>
-    <input #yourName>
-  </div> -->
+      <div>
+        <label>Skill level:</label>
+        <br>
+        <input #newSkill>
+      </div>
+
+      <div>
+        <label>Yards of yarn:</label>
+        <br>
+        <input #newYarnAmount>
+      </div>
+
+      <div>
+        <label>Yarn weight:</label>
+        <br>
+        <input #newYarnWeight>
+      </div>
+
+      <div>
+        <label>Needle size:</label>
+        <br>
+        <input #newNeedleSize>
+      </div>
+
+      <div>
+        <label>Pattern details:</label>
+        <br>
+        <textarea #newPatternInfo></textarea>
+      </div>
+
+      <button (click)="submitForm(newProjectName.value, newSkill.value, newYarnAmount.value, newYarnWeight.value, newNeedleSize.value, newPatternInfo.value)">Add</button>
+    </div>
 
   <div>
-    <label>Project Name:</label>
-    <br>
-    <input #newProjectName>
+    <app-projects></app-projects>
   </div>
-
-  <div>
-    <label>Skill level:</label>
-    <br>
-    <input #newSkill>
-  </div>
-
-  <div>
-    <label>Yards of yarn:</label>
-    <br>
-    <input #newYarnAmount>
-  </div>
-
-  <div>
-    <label>Yarn weight:</label>
-    <br>
-    <input #newYarnWeight>
-  </div>
-
-  <div>
-    <label>Needle size:</label>
-    <br>
-    <input #newNeedleSize>
-  </div>
-
-  <div>
-    <label>Pattern details:</label>
-    <br>
-    <textarea #newPatternInfo></textarea>
-  </div>
-
-  <button (click)="submitForm(newProjectName.value, newSkill.value, newYarnAmount.value, newYarnWeight.value, newNeedleSize.value, newPatternInfo.value)">Add</button>
-</div>
-
-<div>
-  <app-projects></app-projects>
-</div>
 
 </div>

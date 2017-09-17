@@ -38,7 +38,7 @@
   .project-left {
     @include grid-column(5);
     .project-img {
-      margin-top: 20px;
+      margin-top: 15px;
       max-width: 350px;
       width: 100%;
       border-radius: $radius;
@@ -71,6 +71,15 @@
       }
       strong {
         color: $teal;
+      }
+      .name {
+        color: $pink;
+        font-weight: bold;
+        cursor: pointer;
+        transition: $transition;
+        &:hover {
+          opacity: $opacity;
+        }
       }
       .project-icon {
         width: 23px;

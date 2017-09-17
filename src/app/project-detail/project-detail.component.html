@@ -10,11 +10,11 @@
     <h2>Project Details</h2>
     <div class="sep"></div>
     <div class="project-icons">
-      <p><img src="assets/icon/person-small-pink.png" class="project-icon"><strong>Posted by: </strong>{{profile?.name}}</p>
+      <p><img src="assets/icon/person-small-pink.png" class="project-icon"><strong>Posted by: </strong><span class="name">{{profile?.name}}</span></p>
 
       <p><img src="assets/icon/skill-small-pink.png" class="project-icon"><strong>Skill level: </strong>{{(projectToDisplay | async)?.skill}}</p>
 
-      <p><img src="assets/icon/yarn-small-pink.png" class="project-icon"><strong>Amount of yarn: </strong>{{(projectToDisplay | async)?.yarnAmount}}</p>
+      <p><img src="assets/icon/yarn-small-pink.png" class="project-icon"><strong>Amount of yarn: </strong>{{(projectToDisplay | async)?.yarnAmount}} yards</p>
 
       <p><img src="assets/icon/scale-small-pink.png" class="project-icon"><strong>Yarn weight: </strong>{{(projectToDisplay | async)?.yarnWeight}}</p>
 

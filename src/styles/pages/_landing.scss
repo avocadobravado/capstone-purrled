@@ -15,6 +15,11 @@
     margin: 0;
     color: $pink;
   }
+  .cat {
+    &:hover {
+      animation: cat 750ms infinite alternate ease-in-out;
+    }
+  }
   .landing-container {
     margin: 0 auto;
     padding: 20px;
@@ -23,7 +28,7 @@
     min-width: 300px;
     max-width: 500px;
     border-radius: 10px;
-    box-shadow: 5px 5px 50px 5px darken($teal, 20%);
+    box-shadow: 5px 5px 50px 5px darken($teal, 15%);
     text-align: center;
     img {
       margin: 0 auto 20px auto;
@@ -49,7 +54,7 @@
         border-bottom: 3px solid transparent;
       }
       &:hover {
-        box-shadow: 0 3px 20px 3px lighten($pink, 18%);
+        box-shadow: 0 2px 20px 2px lighten($pink, 18%);
         opacity: .92;
       }
     }

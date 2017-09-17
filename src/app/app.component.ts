@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
@@ -8,6 +8,7 @@ import { Profile } from './models/profile.model';
 import { ProfileService } from './services/profile.service';
 import { AuthenticationService } from './services/authentication.service';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,12 +16,14 @@ import { AuthenticationService } from './services/authentication.service';
   providers: [ProfileService, AuthenticationService]
 })
 export class AppComponent {
-  user;
-
   private isLoggedIn: boolean;
   private userName: string;
+  user: Observable<firebase.User>;
+  displayName: string;
 
-  constructor(public authService: AuthenticationService) {
+  constructor(
+    public profileService: ProfileService,
+    public authService: AuthenticationService) {
     this.authService.user.subscribe(user => {
       if (user == null) {
         this.isLoggedIn = false;
