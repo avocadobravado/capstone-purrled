@@ -13,4 +13,9 @@ button {
   background-color: $pink;
   margin-left: 10px;
   padding: 10px;
+  transition: $transition;
+  &:hover {
+    background-color: lighten($pink, 2%);
+    box-shadow: 1px 1px 20px 1px darken($teal, 15%);
+  }
 }

@@ -35,3 +35,9 @@ ul {
   height: 5px;
   background-color: $pink;
 }
+
+h2 {
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing;
+}

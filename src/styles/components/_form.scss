@@ -21,6 +21,20 @@ input {
     height: 20px;
     width: 25%;
     font-size: 16px;
+    border: 2px solid transparent;
+    transition: $transition;
+    color: $pink;
+    &:focus {
+      border: 2px solid darken($teal, 15%);
+      opacity: 0.95;
+      &::after {
+        content: '';
+      }
+    }
+  }
+  ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    font-family: $primary;
+    color: #ccc;
   }
   input[type=checkbox] {
     background-color: red;

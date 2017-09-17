@@ -1,20 +1,42 @@
 // Main projects
-
+.project-page {
+  .card-wrapper {
+    @include grid-column(12);
+    margin-top: 10px;
+    .project-card {
+      @include grid-column(4);
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      height: 200px;
+      background-color: $pink;
+      .project-card-text {
+        width: 100%;
+        text-align: center;
+        background-color: $teal;
+        transition: $transition;
+        &:hover {
+          opacity: $opacity;
+        }
+        h3 {
+          margin: 0;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
 
 // Project detail pages
 .project-detail {
   @include grid-column(12);
-  h2 {
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    letter-spacing: $letter-spacing;
-  }
   p {
     color: $black;
     font-size: 20px;
   }
   .project-left {
-    @include grid-column(4);
+    @include grid-column(5);
     .project-img {
       margin-top: 20px;
       max-width: 350px;
@@ -23,7 +45,7 @@
     }
   }
   .project-right {
-    @include grid-column(8);
+    @include grid-column(7);
     h2 {
       margin-top: 30px;
     }
@@ -37,6 +59,9 @@
       span {
         color: $pink;
         padding-right: 10px;
+        &:hover {
+          transform: scale(1.1em);
+        }
       }
     }
     .project-icons {
