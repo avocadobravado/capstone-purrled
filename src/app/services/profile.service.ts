@@ -20,9 +20,12 @@ export class ProfileService {
   }
 
   addProfile(uid: string, name: string, photoURL: string) {
-   this.profiles.push(new Profile(uid, name, photoURL, '', [],[]));
+    // As per David East's answer here (https://github.com/angular/angularfire2/issues/636#issuecomment-256195254)
+    // we can set the Profile's $key to the user UID. That will make life easier later on.
+    const profile = this.database.object(`/profiles/`+uid);
+    profile.set(new Profile(uid, name, photoURL, '', [],[]));
   }
-
+  
   getProfileByUid(profileUid: string){
     return this.database.list('/profiles', {
       query: {
