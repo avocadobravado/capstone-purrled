@@ -8,6 +8,8 @@ button {
 }
 
 .search-button {
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing;
   background-color: $pink;
   margin-left: 10px;
   padding: 10px;

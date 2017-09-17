@@ -24,6 +24,7 @@ export class AuthenticationService {
     this.user.subscribe(auth => {
      if (auth !== undefined && auth !== null) {
        this.createProfileIfNoneExists(auth);
+       this.router.navigate(['/projects']);
       }
     });
   }
