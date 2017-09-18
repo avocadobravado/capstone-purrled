@@ -25,14 +25,23 @@ export class ProfileService {
     const profile = this.database.object(`/profiles/`+uid);
     profile.set(new Profile(uid, name, photoURL, '', [],[]));
   }
-  
-  getProfileByUid(profileUid: string){
-    return this.database.list('/profiles', {
-      query: {
-        orderByChild: 'uid',
-        equalTo: profileUid,
-        limitToFirst: 1
-      }
+
+  getProfileByUid(profileUid: string) : Promise<Profile>{
+    // Wrap the ListObservable as a Promise, it's easier to deal with 😎
+    return new Promise((resolve, reject) => {
+      this.database.list('/profiles', {
+        query: {
+          orderByChild: 'uid',
+          equalTo: profileUid,
+          limitToFirst: 1
+        }
+      }).subscribe( profiles => {
+        if (profiles !== undefined && profiles.length > 0)
+        {
+          resolve(profiles[0]);
+        }
+        else reject (new Error('No profile found for UID of ' + profileUid));
+      })
     });
   }
 

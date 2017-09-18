@@ -37,13 +37,10 @@ export class ProjectDetailComponent implements OnInit {
 
       this.projectToDisplay.subscribe( result => {
         this.profileService.getProfileByUid(result.userId).
-          subscribe( profiles => {
-            if( profiles !== undefined ) {
-              this.profile = profiles[0];
-            }
+          then( profile => {
+            this.profile = profile;
             console.log(this.profile);
           });
-      });
-
+        });
   }
 }
