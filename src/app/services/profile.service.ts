@@ -23,7 +23,7 @@ export class ProfileService {
     // As per David East's answer here (https://github.com/angular/angularfire2/issues/636#issuecomment-256195254)
     // we can set the Profile's $key to the user UID. That will make life easier later on.
     const profile = this.database.object(`/profiles/`+uid);
-    profile.set(new Profile(uid, name, photoURL, '', [],[]));
+    profile.set(new Profile(name, photoURL, '', [],[]));
   }
 
   getProfileByUid(profileUid: string) : Promise<Profile>{

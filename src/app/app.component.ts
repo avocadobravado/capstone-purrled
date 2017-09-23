@@ -20,16 +20,19 @@ export class AppComponent {
   private userName: string;
   user: Observable<firebase.User>;
   displayName: string;
+  uid: string;
 
   constructor(
     public profileService: ProfileService,
     public authService: AuthenticationService) {
+    this.user = this.authService.user;
     this.authService.user.subscribe(user => {
       if (user == null) {
         this.isLoggedIn = false;
       } else {
         this.isLoggedIn = true;
         this.userName = user.displayName;
+        this.uid = user.uid;
       }
     });
   }

@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class AuthenticationService {
   user: Observable<firebase.User>;
   displayName: string;
+  uid: string;
 
   constructor(public afAuth: AngularFireAuth, private database: AngularFireDatabase, public router: Router, private profileService: ProfileService) {
     this.user = afAuth.authState;
@@ -26,6 +27,8 @@ export class AuthenticationService {
        this.createProfileIfNoneExists(auth);
        this.router.navigate(['/projects']);
       }
+      this.displayName = auth.displayName;
+      this.uid = auth.uid;
     });
   }
 
@@ -34,9 +37,9 @@ export class AuthenticationService {
     this.router.navigate(['']);
   }
 
-  // getUserName(uid: string) {
-  //   this.database.object('user/');
-  // }
+  getUserName(uid: string) {
+    this.database.object('profile/');
+  }
 
   getUserUid():string {
     var userObject: firebase.User;

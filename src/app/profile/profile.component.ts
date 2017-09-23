@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./profile.component.scss'],
   providers: [ProjectService, ProfileService]
 })
+
 export class ProfileComponent implements OnInit {
   // Profile specific
   profileName;
@@ -26,14 +27,14 @@ export class ProfileComponent implements OnInit {
     private location: Location,
     private projectService: ProjectService,
     private profileService: ProfileService
-) {}
+  ) {}
 
-ngOnInit() {
-  this.route.params.forEach((urlParameters) => {
-    this.profileName = urlParameters['id'];
-  });
-  this.profileToDisplay =
-    this.projectService.getProjectByName(this.profileName);
-}
+  ngOnInit() {
+    this.route.params.forEach((urlParameters) => {
+      this.profileName = urlParameters['id'];
+    });
+    this.profileToDisplay =
+      this.projectService.getProjectByName(this.profileName);
+  }
 
 }

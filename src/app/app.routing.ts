@@ -6,6 +6,7 @@ import { FriendsComponent } from './friends/friends.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AuthenticationService } from './services/authentication.service'
 
 const appRoutes: Routes = [
   {
@@ -29,7 +30,7 @@ const appRoutes: Routes = [
   component: AdminComponent
   },
   {
-  path: 'profile/:uid',
+  path: 'profile/:id',
   component: ProfileComponent
   }
 ];
