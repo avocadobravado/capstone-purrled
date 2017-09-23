@@ -1,0 +1,20 @@
+.profile {
+  @include grid-column(12);
+  h3 {
+    color: $pink;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing;
+  }
+
+  .user-photo {
+    border-radius: 50%;
+    max-width: 200px;
+  }
+  .profile-left {
+    @include grid-column(3);
+  }
+  .profile-right {
+    @include grid-column(9);
+  }
+}

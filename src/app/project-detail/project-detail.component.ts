@@ -39,7 +39,6 @@ export class ProjectDetailComponent implements OnInit {
         this.profileService.getProfileByUid(result.userId).
           then( profile => {
             this.profile = profile;
-            console.log(this.profile);
           });
         });
   }

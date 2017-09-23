@@ -1,7 +1,22 @@
-<div class="container">
-  <h2>My profile</h2>
-  <p>Profile information</p>
-  <button type="button" name="button">Edit profile</button>
-  <p>Friends</p>
-  <p>Favorites</p>
+<div class="container profile">
+  <div class="profile-left">
+    <h2>Profile</h2>
+    <div class="sep"></div>
+    <h3>{{(profileToDisplay | async)?.name}}</h3>
+    <img src="{{(profileToDisplay | async)?.photoURL}}" class="user-photo">
+    <p><button type="button" name="button">Edit profile</button></p>
+  </div>
+  <div class="profile-right">
+    <div class="projects">
+      <h2>Projects</h2>
+      <div class="sep"></div>
+        <div *ngFor="let project of projects | async" class="project-card" (click)="goToDetailPage(project)">
+          <div class="project-card-text">
+            <h3>{{project.projectName}}</h3>
+          </div>
+        </div>
+      <h2>Favorites</h2>
+      <div class="sep"></div>
+    </div>
+  </div>
 </div>

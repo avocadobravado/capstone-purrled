@@ -17,11 +17,36 @@ export class ProjectService {
 
   addProject(newProject: Project) {
    this.projects.push(newProject);
- }
+  }
 
  getProjectByName(projectName: string){
     return this.database.object('projects/' + projectName);
-  }
+ }
+
+ getProjectsByUserId(id: string) {
+   return this.database.list('/projects', {
+       query: {
+         orderByChild: 'userId',
+         equalTo: id
+       }
+     });
+ }
+ // getProjectsByUserId(id: string) {
+ //   return new Promise((resolve, reject) => {
+ //     this.database.list('/projects', {
+ //       query: {
+ //         orderByChild: 'userId',
+ //         equalTo: id
+ //       }
+ //     }).subscribe( projects => {
+ //       if (projects !== undefined)
+ //         {
+ //           resolve(projects);
+ //         }
+ //       else reject (console.log('No projects found for UID of ' + id));
+ //     });
+ //   });
+ // }
 
   updateProject(localUpdatedProject){
    var projectEntryInFirebase = this.getProjectByName(localUpdatedProject.$key);

@@ -18,12 +18,13 @@ import { Router } from '@angular/router';
 
 export class ProfileComponent implements OnInit {
   // Profile specific
-  profileName;
+  profileId;
   profileToDisplay;
   projects;
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private location: Location,
     private projectService: ProjectService,
     private profileService: ProfileService
@@ -31,10 +32,16 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
-      this.profileName = urlParameters['id'];
+      this.profileId = urlParameters['id'];
     });
     this.profileToDisplay =
-      this.projectService.getProjectByName(this.profileName);
+      this.profileService.getProfileById(this.profileId);
+
+      this.projects = this.projectService.getProjectsByUserId(this.profileId);
   }
+
+  goToDetailPage(clickedProject) {
+     this.router.navigate(['projects', clickedProject.$key]);
+   };
 
 }
