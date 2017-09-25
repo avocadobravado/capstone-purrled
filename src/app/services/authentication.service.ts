@@ -14,21 +14,24 @@ export class AuthenticationService {
   displayName: string;
   uid: string;
 
-  constructor(public afAuth: AngularFireAuth, private database: AngularFireDatabase, public router: Router, private profileService: ProfileService) {
-    this.user = afAuth.authState;
-  }
+  constructor(
+    public afAuth: AngularFireAuth,
+    private database: AngularFireDatabase,
+    public router: Router,
+    private profileService: ProfileService) {
+      this.user = afAuth.authState;
+    }
 
   login() {
     this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-
     // Create a new profile if necessary
     this.user.subscribe(auth => {
      if (auth !== undefined && auth !== null) {
        this.createProfileIfNoneExists(auth);
-       this.router.navigate(['/projects']);
       }
       this.displayName = auth.displayName;
       this.uid = auth.uid;
+      this.router.navigate(['/friends']);
     });
   }
 

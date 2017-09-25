@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -15,7 +15,7 @@ import { AuthenticationService } from './services/authentication.service';
   styleUrls: ['./app.component.scss'],
   providers: [ProfileService, AuthenticationService]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   private isLoggedIn: boolean;
   private userName: string;
   user: Observable<firebase.User>;
@@ -24,7 +24,8 @@ export class AppComponent {
 
   constructor(
     public profileService: ProfileService,
-    public authService: AuthenticationService) {
+    public authService: AuthenticationService,
+    private router: Router) {
     this.user = this.authService.user;
     this.authService.user.subscribe(user => {
       if (user == null) {
@@ -33,6 +34,16 @@ export class AppComponent {
         this.isLoggedIn = true;
         this.userName = user.displayName;
         this.uid = user.uid;
+      }
+    });
+  }
+
+  ngOnInit() {
+    this.user.subscribe(user => {
+      if (user) {
+        this.router.navigate(['/projects']);
+      } else {
+        return console.log('hi');
       }
     });
   }
