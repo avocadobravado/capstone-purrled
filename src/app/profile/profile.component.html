@@ -1,4 +1,4 @@
-<div class="container profile">
+<div class="container profile project-detail">
   <div class="profile-left">
     <h2>Profile</h2>
     <div class="sep"></div>
@@ -6,13 +6,15 @@
     <img src="{{(profileToDisplay | async)?.photoURL}}" class="user-photo">
     <p><button type="button" name="button">Edit profile</button></p>
   </div>
-  <div class="profile-right">
+  <div class="profile-right project-right">
     <div class="projects">
       <h2>Projects</h2>
       <div class="sep"></div>
-        <div *ngFor="let project of projects | async" class="project-card" (click)="goToDetailPage(project)">
-          <div class="project-card-text">
-            <h3>{{project.projectName}}</h3>
+        <div class="card-wrapper">
+          <div *ngFor="let project of projects | async" class="project-card profile-card" (click)="goToDetailPage(project)">
+            <div class="project-card-text">
+              <h3>{{project.projectName}}</h3>
+            </div>
           </div>
         </div>
       <h2>Favorites</h2>
