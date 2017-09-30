@@ -4,6 +4,8 @@
   <div class="card-wrapper">
     <div *ngFor="let project of projects | async" class="project-card" (click)="goToDetailPage(project)">
       <div class="project-card-text">
+        <img src="" id="project-img">
+        <!-- {{getImageURL(project.key)}} -->
         <h3>{{project.projectName}}</h3>
       </div>
       <!-- <div *ngIf="currentRoute === '/admin'">

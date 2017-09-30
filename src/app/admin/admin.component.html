@@ -1,4 +1,16 @@
+<div class="" *ngIf="upload">
+  <div class="progress">
+    <div class="" [ngStyle]="{ 'width': upload?.progress + '^'}">
+    </div>
+    Progress: {{upload?.progress}}% Complete
+  </div>
+</div>
+
 <div class="container">
+  <div class="">
+    <input type="file" name="" (change)="handleFile($event)">
+    <!-- <button type="button" (click)="uploadFile()">Upload image</button> -->
+  </div>
   <h2>Add New Project</h2>
   <div class="sep"></div>
     <div class="add-project">

@@ -17,7 +17,7 @@ export class ProjectService {
   }
 
   addProject(newProject: Project) {
-   this.projects.push(newProject);
+   return this.projects.push(newProject);
   }
 
  getProjectByUid(key: string){
