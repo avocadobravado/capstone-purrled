@@ -27,7 +27,7 @@ export class ProfileService {
     // As per David East's answer here (https://github.com/angular/angularfire2/issues/636#issuecomment-256195254)
     // we can set the Profile's $key to the user UID. That will make life easier later on.
     const profile = this.database.object(`/profiles/`+uid);
-    profile.set(new Profile(name, photoURL, '', [],[]));
+    profile.set(new Profile(name, photoURL, '', []));
   }
 
   getProfileByUid(profileUid: string) : Promise<Profile>{
@@ -49,20 +49,5 @@ export class ProfileService {
     });
   }
 
- //  updateProfile(localUpdatedProfile){
- //   var projectEntryInFirebase = this.getProfileByUID(localUpdatedProject.$key);
- //   projectEntryInFirebase.update({
- //   name: localUpdatedProject.name,
- //   skill: localUpdatedProject.skill,
- //   yarnAmount: localUpdatedProject.yarnAmount,
- //   yarnWeight: localUpdatedProject.yarnWeight,
- //   needleSize: localUpdatedProject.needleSize,
- //   patternInfo: localUpdatedProject.patternInfo,
- //   });
- // }
- //
- // deleteProject(localProjectToDelete){
- //    var projectEntryInFirebase = this.getProjectByName(localProjectToDelete.$key);
- //    projectEntryInFirebase.remove();
- //  }
+
 }

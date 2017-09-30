@@ -21,6 +21,7 @@ export class ProfileComponent implements OnInit {
   profileId;
   profileToDisplay;
   projects;
+  favorites;
 
   constructor(
     private route: ActivatedRoute,
@@ -38,7 +39,16 @@ export class ProfileComponent implements OnInit {
       this.profileService.getProfileById(this.profileId);
 
       this.projects = this.projectService.getProjectsByUserId(this.profileId);
+
+    this.profileToDisplay.subscribe(profile => {
+      for(let favorite of profile.favorites) {
+        console.log('hello? ' + favorite.$key);
+        this.favorites.push(this.projectService.getProjectByUid(favorite.$key));
+        // console.log(this.favorites);
+      }
+    });
   }
+  //End of ngOnInit
 
   goToDetailPage(clickedProject) {
      this.router.navigate(['projects', clickedProject.$key]);

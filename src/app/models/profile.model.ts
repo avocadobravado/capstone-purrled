@@ -3,7 +3,6 @@ export class Profile {
     public name: string,
     public photoURL: string,
     public bio: string,
-    public favorites: string[],
-    public friends: string[]
+    public favorites: string[]
   ) { }
 }

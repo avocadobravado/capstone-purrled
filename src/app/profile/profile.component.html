@@ -4,7 +4,6 @@
     <div class="sep"></div>
     <h3>{{(profileToDisplay | async)?.name}}</h3>
     <img src="{{(profileToDisplay | async)?.photoURL}}" class="user-photo">
-    <p><button type="button" name="button">Edit profile</button></p>
   </div>
   <div class="profile-right project-right">
     <div class="projects">
@@ -19,6 +18,11 @@
         </div>
       <h2>Favorites</h2>
       <div class="sep"></div>
+        <div *ngFor="let favorite of favorites">
+          <!-- {{(profileToDisplay | async)?.favorites}} -->
+          <!-- (profileToDisplay | async)? -->
+          {{(profileToDisplay | async)?.favorites}}
+        </div>
     </div>
   </div>
 </div>

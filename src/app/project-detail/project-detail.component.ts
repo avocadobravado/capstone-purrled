@@ -33,7 +33,7 @@ export class ProjectDetailComponent implements OnInit {
       this.route.params.forEach((urlParameters) => {
         this.projectName = urlParameters['id'];
       });
-      this.projectToDisplay = this.projectService.getProjectByName(this.projectName);
+      this.projectToDisplay = this.projectService.getProjectByUid(this.projectName);
 
       this.projectToDisplay.subscribe( result => {
         this.profileService.getProfileByUid(result.userId).
