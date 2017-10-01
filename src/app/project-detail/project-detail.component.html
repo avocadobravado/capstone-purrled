@@ -3,7 +3,7 @@
   <div class="project-left">
     <h2>{{(projectToDisplay | async)?.projectName}}</h2>
     <div class="sep"></div>
-    <img src="{{profile?.photoURL}}" alt="" class="project-img">
+    <img src="{{(projectToDisplay | async)?.imageURL}}" alt="" class="project-img">
   </div>
   <div class="project-right">
     <h3><span><i class="fa fa-heart-o" aria-hidden="true"></i></span>Favorite</h3>

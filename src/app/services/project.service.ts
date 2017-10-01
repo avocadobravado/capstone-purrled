@@ -44,6 +44,12 @@ export class ProjectService {
   // return this.projects.filter(x => projectIds.indexOf(x));
 // }
 
+  updateImageURL(key: string, imageURL: string)
+  {
+    const project = this.getProjectByUid(key);
+    project.update({ imageURL: imageURL });
+  }
+
   updateProject(localUpdatedProject){
    var projectEntryInFirebase = this.getProjectByUid(localUpdatedProject.$key);
    projectEntryInFirebase.update({
@@ -52,7 +58,7 @@ export class ProjectService {
      yarnAmount: localUpdatedProject.yarnAmount,
      yarnWeight: localUpdatedProject.yarnWeight,
      needleSize: localUpdatedProject.needleSize,
-     patternInfo: localUpdatedProject.patternInfo,
+     patternInfo: localUpdatedProject.patternInfo
    });
  }
 

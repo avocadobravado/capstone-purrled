@@ -15,41 +15,41 @@ export class UploadService {
 
   constructor(private ngFire: AngularFireModule, private db: AngularFireDatabase) { }
 
-  uploadFile(upload: Upload) {
+  uploadFile(upload: Upload) : Promise<string> {
     const storageRef = firebase.storage().ref();
     const uploadTask = storageRef.child(`${this.basePath}/${upload.$key}`)
       .put(upload.file);
 
-    uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
-    // three observers
-    // 1. state_changed observers
-    (snapshot) => {
-      //upload in progress
-      upload.progress = (uploadTask.snapshot.bytesTransferred / uploadTask.snapshot.totalBytes) * 100;
-      console.log("Upload progress " + upload.progress);
-    },
-    // 2. error observer
-    (error) => {
-      // upload failed
-      console.log(error);
-    },
-    // 3. success
-    (): any => {
-      upload.url = uploadTask.snapshot.downloadURL;
-      // upload.name = upload.file.name;
-      // this.saveFileData(upload);
+    return new Promise( function(resolve, reject) {
+      uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
+        // three observers
+        // 1. state_changed observers
+        (snapshot) => {
+          //upload in progress
+          upload.progress = (uploadTask.snapshot.bytesTransferred / uploadTask.snapshot.totalBytes) * 100;
+          console.log("Upload progress " + upload.progress);
+        },
+        // 2. error observer
+        (error) => {
+          // upload failed
+          reject(error);
+        },
+        // 3. success
+        (): any => {
+          resolve(uploadTask.snapshot.downloadURL);
+        }
+      );
+    });
+  }
 
-    }
-  );
-}
-
-getImageURL(projectKey: string) {
-  const storageRef = firebase.storage().ref();
-  return storageRef.child(this.basePath + projectKey).getDownloadURL();
-}
+  getImageURL(projectKey: string) {
+    return firebase.storage().ref(this.basePath)
+      .child(projectKey).getDownloadURL();
+  }
 
   private saveFileData(upload: Upload) {
     this.db.list(`${this.basePath}/`).push(upload);
     console.log("File saved! " + upload.url);
   }
+
 }

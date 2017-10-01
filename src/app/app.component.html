@@ -7,7 +7,7 @@
       <div class="nav-links">
         <li *ngIf="isLoggedIn"><a routerLink="projects">All Projects</a></li>
         <li *ngIf="isLoggedIn"><a routerLink="admin">Add Project</a></li>
-        <li *ngIf="isLoggedIn"><a routerLink="friends">Friends</a></li>
+        <!-- <li *ngIf="isLoggedIn"><a routerLink="friends">Friends</a></li> -->
         <li *ngIf="isLoggedIn"><a [routerLink]="['profile', uid]">Profile</a></li>
         <li (click)="login()" *ngIf="!isLoggedIn" class="login">Sign In</li>
         <li (click)="logout()" *ngIf="isLoggedIn" class="logout">Sign Out</li>

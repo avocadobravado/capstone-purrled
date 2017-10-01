@@ -40,3 +40,18 @@ input {
     background-color: white;
   }
 }
+
+input[type=file] {
+  color:blue;
+  font-size: 16px;
+  font-style: italic;
+}
+
+label {
+  font-weight: bold;
+}
+
+textarea {
+  border: 1px solid $teal;
+  border-radius: $radius;
+}

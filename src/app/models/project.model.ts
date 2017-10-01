@@ -6,6 +6,7 @@ export class Project {
     public yarnAmount: number,
     public yarnWeight: string,
     public needleSize: number,
-    public patternInfo: string
+    public patternInfo: string,
+    public imageURL: string = ""
    ) { }
 }

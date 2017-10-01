@@ -7,10 +7,6 @@
 </div>
 
 <div class="container">
-  <div class="">
-    <input type="file" name="" (change)="handleFile($event)">
-    <!-- <button type="button" (click)="uploadFile()">Upload image</button> -->
-  </div>
   <h2>Add New Project</h2>
   <div class="sep"></div>
     <div class="add-project">
@@ -18,6 +14,12 @@
         <label>Project Name:</label>
         <br>
         <input #newProjectName>
+      </div>
+
+      <div>
+        <label for="add-new">Project Image</label>
+        <br>
+        <input type="file" id="add-new" (change)="handleFile($event)"/>
       </div>
 
       <div>
@@ -52,9 +54,4 @@
 
       <button (click)="submitForm(newProjectName.value, newSkill.value, newYarnAmount.value, newYarnWeight.value, newNeedleSize.value, newPatternInfo.value)">Add</button>
     </div>
-
-  <div>
-    <app-projects></app-projects>
   </div>
-
-</div>

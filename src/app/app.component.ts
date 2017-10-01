@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
   user: Observable<firebase.User>;
   displayName: string;
   uid: string;
+  profileToDisplay;
 
   constructor(
     public profileService: ProfileService,
