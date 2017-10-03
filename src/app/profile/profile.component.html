@@ -1,4 +1,4 @@
-<div class="container profile project-detail">
+<div class="container">
   <div class="profile-left">
     <h2>Profile</h2>
     <div class="sep"></div>
@@ -15,11 +15,6 @@
               <h3>{{project.projectName}}</h3>
             </div>
           </div>
-        </div>
-      <h2>Favorites</h2>
-      <div class="sep"></div>
-        <div *ngFor="let favorite of favorites">
-          {{(profileToDisplay | async)?.favorites}}
         </div>
     </div>
   </div>

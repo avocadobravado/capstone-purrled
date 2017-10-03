@@ -9,6 +9,7 @@ import * as firebase from 'firebase/app';
 import { Upload } from '../models/upload.model';
 import { UploadService } from '../services/upload.service';
 import * as _ from 'lodash';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -20,11 +21,14 @@ export class AdminComponent implements OnInit {
   private user: firebase.User;
   files: FileList;
   upload: Upload;
+  newProject;
 
-  constructor(private projectService: ProjectService,
+  constructor(
+    private projectService: ProjectService,
     private afAuth: AngularFireAuth,
     private authService: AuthenticationService,
-    private uploadService: UploadService) { }
+    private uploadService: UploadService,
+    private router: Router) { }
 
   ngOnInit() {
     this.afAuth.authState.subscribe(auth => {
@@ -32,6 +36,7 @@ export class AdminComponent implements OnInit {
        this.user = auth;
       }
      });
+
   }
 
   handleFile(event) {
@@ -46,6 +51,8 @@ export class AdminComponent implements OnInit {
      }
 
     var newProject: Project = new Project(this.user.uid, projectName, skill, yarnAmount, yarnWeight, needleSize, patternInfo);
+
+    this.router.navigate(['/profile/$key']);
     this.projectService.addProject(newProject).then((item) => {
       if(this.files) {
         this.uploadFile(item.key);

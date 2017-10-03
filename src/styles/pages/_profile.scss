@@ -13,8 +13,15 @@
   }
   .profile-left {
     @include grid-column(3);
+    background-color: thistle;
+    h2 {
+      background-color: yellow;
+    }
   }
   .profile-right {
     @include grid-column(9);
+    background-color: mistyrose;
+    h2 {background-color:rebeccapurple;
+    margin-top: 20px;}
   }
 }

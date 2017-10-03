@@ -27,24 +27,24 @@ export class AppComponent implements OnInit {
     public profileService: ProfileService,
     public authService: AuthenticationService,
     private router: Router) {
-    this.user = this.authService.user;
-    this.authService.user.subscribe(user => {
-      if (user == null) {
-        this.isLoggedIn = false;
-      } else {
-        this.isLoggedIn = true;
-        this.userName = user.displayName;
-        this.uid = user.uid;
-      }
-    });
-  }
+      this.user = this.authService.user;
+      this.authService.user.subscribe(user => {
+        if (user == null) {
+          this.isLoggedIn = false;
+        } else {
+          this.isLoggedIn = true;
+          this.userName = user.displayName;
+          this.uid = user.uid;
+        }
+      });
+    }
 
   ngOnInit() {
     this.user.subscribe(user => {
       if (user) {
         this.router.navigate(['/projects']);
       } else {
-        return console.log('hi');
+        return console.log('Error line 47 app.component');
       }
     });
   }

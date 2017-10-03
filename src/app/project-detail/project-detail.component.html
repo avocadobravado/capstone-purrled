@@ -1,28 +1,29 @@
-
-<div class="container project-detail">
-  <div class="project-left">
-    <h2>{{(projectToDisplay | async)?.projectName}}</h2>
-    <div class="sep"></div>
-    <img src="{{(projectToDisplay | async)?.imageURL}}" alt="" class="project-img">
-  </div>
-  <div class="project-right">
-    <h3><span><i class="fa fa-heart-o" aria-hidden="true"></i></span>Favorite</h3>
-    <h2>Project Details</h2>
-    <div class="sep"></div>
-    <div class="project-icons">
-      <p><img src="assets/icon/person-small-pink.png" class="project-icon"><strong>Posted by: </strong><a routerLink="../../profile/{{profile?.$key}}" class="name">{{profile?.name}}</a></p>
-
-      <p><img src="assets/icon/skill-small-pink.png" class="project-icon"><strong>Skill level: </strong>{{(projectToDisplay | async)?.skill}}</p>
-
-      <p><img src="assets/icon/yarn-small-pink.png" class="project-icon"><strong>Amount of yarn: </strong>{{(projectToDisplay | async)?.yarnAmount}} yards</p>
-
-      <p><img src="assets/icon/scale-small-pink.png" class="project-icon"><strong>Yarn weight: </strong>{{(projectToDisplay | async)?.yarnWeight}}</p>
-
-      <p><img src="assets/icon/needles-small-pink.png" class="project-icon"><strong>Needle size: </strong>{{(projectToDisplay | async)?.needleSize}}</p>
+<div class="container">
+  <div class="project-detail">
+    <div class="project-left">
+      <h2>{{(projectToDisplay | async)?.projectName}}</h2>
+      <div class="sep"></div>
+      <img src="{{(projectToDisplay | async)?.imageURL}}" alt="" class="project-img">
     </div>
+    <div class="project-right">
+      <h3><span><i class="fa fa-heart-o heart" aria-hidden="true"></i></span>Favorite</h3>
+      <h2>Project Details</h2>
+      <div class="sep"></div>
+      <div class="project-icons">
+        <p><img src="assets/icon/person-small-pink.png" class="project-icon"><strong>Posted by: </strong><a routerLink="../../profile/{{profile?.$key}}" class="name">{{profile?.name}}</a></p>
 
-    <h2>Pattern</h2>
-    <div class="sep"></div>
-    <p>{{(projectToDisplay | async)?.patternInfo}}</p>
+        <p><img src="assets/icon/skill-small-pink.png" class="project-icon"><strong>Skill level: </strong>{{(projectToDisplay | async)?.skill}}</p>
+
+        <p><img src="assets/icon/yarn-small-pink.png" class="project-icon"><strong>Amount of yarn: </strong>{{(projectToDisplay | async)?.yarnAmount}} yards</p>
+
+        <p><img src="assets/icon/scale-small-pink.png" class="project-icon"><strong>Yarn weight: </strong>{{(projectToDisplay | async)?.yarnWeight}}</p>
+
+        <p><img src="assets/icon/needles-small-pink.png" class="project-icon"><strong>Needle size: </strong>{{(projectToDisplay | async)?.needleSize}}</p>
+      </div>
+
+      <h2>Pattern</h2>
+      <div class="sep"></div>
+      <p>{{(projectToDisplay | async)?.patternInfo}}</p>
+    </div>
   </div>
 </div>

@@ -1,11 +1,3 @@
-<div class="" *ngIf="upload">
-  <div class="progress">
-    <div class="" [ngStyle]="{ 'width': upload?.progress + '^'}">
-    </div>
-    Progress: {{upload?.progress}}% Complete
-  </div>
-</div>
-
 <div class="container">
   <h2>Add New Project</h2>
   <div class="sep"></div>
@@ -17,7 +9,7 @@
       </div>
 
       <div>
-        <label for="add-new">Project Image</label>
+        <label for="add-new">Project Image:</label>
         <br>
         <input type="file" id="add-new" (change)="handleFile($event)"/>
       </div>
@@ -49,9 +41,17 @@
       <div>
         <label>Pattern details:</label>
         <br>
-        <textarea #newPatternInfo></textarea>
+        <input #newPatternInfo>
       </div>
 
-      <button (click)="submitForm(newProjectName.value, newSkill.value, newYarnAmount.value, newYarnWeight.value, newNeedleSize.value, newPatternInfo.value)">Add</button>
+      <button class="add-button" (click)="submitForm(newProjectName.value, newSkill.value, newYarnAmount.value, newYarnWeight.value, newNeedleSize.value, newPatternInfo.value)">Add</button>
+    </div>
+
+    <div class="" *ngIf="upload">
+      <div class="progress">
+        <div class="" [ngStyle]="{ 'width': upload?.progress + '^'}">
+        </div>
+        Progress: {{upload?.progress}}% Complete
+      </div>
     </div>
   </div>

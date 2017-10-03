@@ -22,7 +22,7 @@ export class ProfileComponent implements OnInit {
   profileId;
   profileToDisplay;
   projects;
-  favorites;
+  //favorites; <--not working
 
   constructor(
     private route: ActivatedRoute,

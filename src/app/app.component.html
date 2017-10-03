@@ -1,13 +1,13 @@
 <nav>
   <div class="nav-wrapper">
     <ul class="left">
-      <li><a routerLink="projects"><img src="assets/logo-sm-white.svg" class="logo"></a> </li>
+      <li><a *ngIf="isLoggedIn" routerLink="projects"><img src="assets/logo-sm-white.svg" class="logo"></a></li>
+      <li><a *ngIf="!isLoggedIn" routerLink=""><img src="assets/logo-sm-white.svg" class="logo"></a></li>
     </ul>
     <ul class="right">
       <div class="nav-links">
-        <li *ngIf="isLoggedIn"><a routerLink="projects">All Projects</a></li>
+        <li *ngIf="isLoggedIn"><a routerLink="projects">Projects</a></li>
         <li *ngIf="isLoggedIn"><a routerLink="admin">Add Project</a></li>
-        <!-- <li *ngIf="isLoggedIn"><a routerLink="friends">Friends</a></li> -->
         <li *ngIf="isLoggedIn"><a [routerLink]="['profile', uid]">Profile</a></li>
         <li (click)="login()" *ngIf="!isLoggedIn" class="login">Sign In</li>
         <li (click)="logout()" *ngIf="isLoggedIn" class="logout">Sign Out</li>
@@ -17,13 +17,13 @@
 </nav>
 
 <div class="search" *ngIf="isLoggedIn">
-  <form class="search-form">
+  <!-- <form class="search-form">
     <input type="text" name="" value="" placeholder="Search projects">
     <input type="checkbox" name="skill" value="beginner">Beginner
     <input type="checkbox" name="skill" value="intermediate">Intermediate
     <input type="checkbox" name="skill" value="advanced">Advanced
     <button type="submit" name="button" class="search-button">Search</button>
-  </form>
+  </form> -->
 </div>
 
 <router-outlet></router-outlet>

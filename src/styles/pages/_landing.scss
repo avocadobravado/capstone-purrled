@@ -58,6 +58,20 @@
         opacity: .92;
       }
     }
+    .credit {
+      margin-top: 10px;
+      font-size: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: $letter-spacing;
+      a {
+        transition: $transition;
+        color: $teal;
+        &:hover {
+          opacity: $opacity;
+        }
+      }
+    }
   }
 }
 
