@@ -78,14 +78,27 @@
       // <div class="project-right">
       //   <h3><span><i class="fa fa-heart-o heart"
       span {
+        color: transparent;
         color: $pink;
         padding-right: 10px;
         transition: $transition;
-
         &:active {
-          transform: scale(2);
-          text-shadow: 1px 1px 1px red;
-          animation: favorite 750ms 1 alternate ease-in-out;
+          transform: scale(1.2);
+          color: $pink;
+          -webkit-text-stroke: 1px darken($pink, 5%);
+          animation: favorite 750ms infinite alternate ease-in-out;
+          // &::before {
+          //   color: white;
+          //   opacity: 0;
+          //   display: none;
+          // }
+          // &::after {
+          //   content: "\f004";
+          //   font-family: FontAwesome;
+          // }
+        }
+        &:focus {
+          color: green;
         }
       }
     }
@@ -116,10 +129,7 @@
 }
 
 @keyframes favorite {
-  0% {
-    color: pink;
-  }
-  100% {
-    color: rebeccapurple;
+  50% {
+    transform: rotate(720deg);
   }
 }

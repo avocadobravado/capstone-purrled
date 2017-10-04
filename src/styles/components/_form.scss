@@ -5,7 +5,6 @@ input {
   margin: 10px;
   border-radius: $nudge;
   outline: none;
-  // transition:
 }
 
 .search-form {
@@ -42,8 +41,8 @@ input {
 }
 
 input[type=file] {
-  color:blue;
-  font-size: 16px;
+  color: $pink;
+  font-size: 12px;
   font-style: italic;
 }
 
