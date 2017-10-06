@@ -1,0 +1,17 @@
+.process {
+  img {
+    width: 100%;
+  }
+  .invision {
+    text-align: center;
+    transition: $transition;
+    color: $pink;
+    padding: 5px;
+    border: 1px solid $teal;
+    border-radius: $radius;
+    font-weight: bold;
+    &:hover {
+      opacity: $opacity;
+    }
+  }
+}

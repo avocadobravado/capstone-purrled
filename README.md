@@ -12,6 +12,10 @@ Purrled is a web application for knitters built with Angular 4, Firebase, and Sa
 
 ![screenshot of project](https://github.com/avocadobravado/capstone-purrled/raw/master/src/assets/scs01.png?raw=true)
 
+![screenshot of project](https://github.com/avocadobravado/capstone-purrled/raw/master/src/assets/scs02.png?raw=true)
+
+![screenshot of project](https://github.com/avocadobravado/capstone-purrled/raw/master/src/assets/scs03.png?raw=true)
+
 ### Installation
 
 #### Prerequisites
