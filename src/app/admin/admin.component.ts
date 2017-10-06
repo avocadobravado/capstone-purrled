@@ -52,7 +52,7 @@ export class AdminComponent implements OnInit {
 
     var newProject: Project = new Project(this.user.uid, projectName, skill, yarnAmount, yarnWeight, needleSize, patternInfo);
 
-    this.router.navigate(['/profile/$key']);
+    this.router.navigate(['/projects']);
     this.projectService.addProject(newProject).then((item) => {
       if(this.files) {
         this.uploadFile(item.key);

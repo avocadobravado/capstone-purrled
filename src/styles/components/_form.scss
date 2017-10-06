@@ -5,38 +5,11 @@ input {
   margin: 10px;
   border-radius: $nudge;
   outline: none;
-}
-
-.search-form {
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  width: 90%;
-  color: #fff;
-  font-size: 15px;
-  input[type=text] {
-    height: 20px;
-    width: 25%;
-    font-size: 16px;
-    border: 2px solid transparent;
-    transition: $transition;
-    color: $pink;
-    &:focus {
-      border: 2px solid darken($teal, 15%);
-      opacity: 0.95;
-      &::after {
-        content: '';
-      }
-    }
-  }
-  ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    font-family: $primary;
-    color: #ccc;
-  }
-  input[type=checkbox] {
-    background-color: white;
+  transition: $transition;
+  &:focus {
+    opacity: $opacity;
+    border: 2px solid $teal;
+    transform: translateX(.1em);
   }
 }
 
@@ -49,9 +22,4 @@ input[type=file] {
 label {
   font-weight: bold;
   color: $pink;
-}
-
-textarea {
-  border: 1px solid $teal;
-  border-radius: $radius;
 }

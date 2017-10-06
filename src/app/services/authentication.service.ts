@@ -31,7 +31,7 @@ export class AuthenticationService {
       }
       this.displayName = auth.displayName;
       this.uid = auth.uid;
-      this.router.navigate(['/friends']);
+      this.router.navigate(['/projects']);
     });
   }
 

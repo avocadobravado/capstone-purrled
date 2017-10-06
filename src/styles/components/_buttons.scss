@@ -7,15 +7,18 @@ button {
   color: #fff;
 }
 
-.search-button, .add-button {
+.add-button {
+  width: 100px;
   text-transform: uppercase;
   letter-spacing: $letter-spacing;
   background-color: $pink;
   margin-left: 10px;
   padding: 10px;
   transition: $transition;
+  margin-bottom: 25px;
+  font-size: 16px;
   &:hover {
     background-color: lighten($pink, 2%);
-    box-shadow: 1px 1px 20px 1px darken($teal, 15%);
+    box-shadow: 0 2px 20px 2px lighten($pink, 18%);
   }
 }
