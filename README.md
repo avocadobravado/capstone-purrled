@@ -1,49 +1,115 @@
-#Notes
-
-**Components:**
-* Upload
-* Search
-
-**Services:**
-* AuthenticationGuard: 
-* Upload service
-* Authentication
-* Image detail
-* Search
-* Profile service for viewing a profile and changing own profile
-* Adding new project
-
-**Not that important:**
-* Friends service for returning friend info
-* edit own profile avatar
-* deleting own account
-* delete project
-
 # Purrled
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
+#### A community for knitters
 
-## Development server
+#### By **Rose Sponseller, October 6th, 2017**
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Description
 
-## Code scaffolding
+Purrled is a web application for knitters built with Angular 4, Firebase, and Sass for knitters. Knitters can upload new projects in Purrled and view the other projects others have uploaded.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+## Screenshots of Web Application
 
-## Build
+![screenshot of project](https://github.com/avocadobravado/capstone-purrled/raw/master/src/assets/scs01.png?raw=true)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+### Installation
 
-## Running unit tests
+#### Prerequisites
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* Web browser with ES6 compatibility
+* Node.js
+* npm
+* Firebase
+* Angular
+* TypeScript
+* Git
 
-## Running end-to-end tests
+Open your terminal and clone this repository with the following command:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+```
+$ git clone https://github.com/avocadobravado/capstone-purrled
+```
 
-## Further help
+Move into the cloned repository:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
+$ cd capstone-purrled
+```
+
+Create an api-keys.ts file:
+
+```
+$ touch src/app/api-keys.ts
+```
+
+* Go to http://firebase.google.com and sign up for an account
+* Once signed up, click on "Go to Console"
+* Then, "Add project" and add your project's name
+* From there, click on "Add Firebase to your Web App"
+* Finally, add the information from the pop up modal from Firebase to your api-keys.ts file (it should look something like this, but replace the information inside the masterFirebaseConfig with your own unique information):
+
+```
+export var masterFirebaseConfig = {
+  apiKey: "xxxxx",
+  authDomain: "xxxxx",
+  databaseURL: "xxxxx",
+  projectId: "xxxxx",
+  storageBucket: "",
+  messagingSenderId: "xxxxx"
+};
+```
+
+Install npm and Bower by typing:
+
+```
+$ npm install
+$ bower install
+```
+
+Set up the build:
+
+```
+$ ng build
+```
+
+Start the server:
+
+```
+$ ng serve
+```
+
+The previous step should immediately open up a web browser such as Google Chrome and take you to the site, but if not, visit the following address in your preferred browser:
+
+```
+localhost:4200
+```
+
+## Built With
+
+### Code
+* HTML
+* CSS
+* JavaScript
+* TypeScript
+* Angular 2
+* Neat
+
+### Tools &amp; Dependencies
+* Node
+* Bower
+* npm
+* Angular CLI
+* Firebase
+
+### Design
+* Google Fonts
+
+## Support and contact details
+
+* Feel free to reach out with suggestions at rosesponseller@gmail.com
+
+## License
+
+This project is licensed under the MIT License
+
+**_Rose Sponseller_** Copyright (c) 2017

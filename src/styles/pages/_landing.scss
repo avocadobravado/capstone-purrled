@@ -3,8 +3,7 @@
   height: 100vh;
   margin-top: 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  // justify-content: center;
   h3, p {
     margin: 0;
   }
@@ -24,10 +23,9 @@
     margin: 0 auto;
     padding: 20px;
     background-color: #fff;
-    width: 60%;
     min-width: 300px;
     max-width: 500px;
-    border-radius: 10px;
+    border-radius: $radius;
     box-shadow: 5px 5px 50px 5px darken($teal, 15%);
     text-align: center;
     img {
