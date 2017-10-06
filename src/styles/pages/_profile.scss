@@ -1,12 +1,14 @@
 .profile {
   @include grid-column(12);
+  h2 {
+    margin-top: 20px;
+  }
   h3 {
     color: $pink;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: $letter-spacing;
   }
-
   .user-photo {
     border-radius: 50%;
     max-width: 200px;
@@ -14,13 +16,55 @@
   }
   .profile-left {
     @include grid-column(3);
-    h2 {
-    }
   }
   .profile-right {
     @include grid-column(9);
-    h2 {
-      margin-top: 20px;
+    .sep {
+      margin-bottom: 20px;
+    }
+    .card-wrapper {
+      @include grid-column(12);
+      .profile-card {
+        @include grid-column(6);
+        cursor: pointer;
+        transition: $transition;
+        margin-bottom: 20px;
+        &:hover {
+          background-color: $teal;
+          box-shadow: 1px 1px 25px 1px $black;
+          opacity: $opacity;
+        }
+        .profile-card-text {
+          padding-bottom: 80%;
+          overflow: hidden;
+          position: relative;
+          border-radius: $radius;
+          h3 {
+            margin: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            z-index: 9999;
+            width: 100%;
+            color: #fff;
+            padding: 5px;
+            background-color: $teal;
+            letter-spacing: $letter-spacing;
+            text-transform: uppercase;
+            font-size: 1.2em;
+          }
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            z-index: -1;
+          }
+        }
+      }
     }
   }
 }

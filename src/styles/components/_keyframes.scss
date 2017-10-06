@@ -9,3 +9,33 @@
     transform: skewX(-.5deg);
   }
 }
+
+@keyframes purr {
+  0% {
+    transform: translateX(0);
+  }
+  33% {
+    transform: translateX(-.1em);
+  }
+  66% {
+    transform: translateX(.1em);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes favorite {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: scale(1.2);
+    color: darken($pink, 10%);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

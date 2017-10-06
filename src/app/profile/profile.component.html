@@ -6,18 +6,16 @@
     <h3>{{(profileToDisplay | async)?.name}}</h3>
     <img src="{{(profileToDisplay | async)?.photoURL}}" class="user-photo">
   </div>
-  <div class="profile-right project-right">
-    <div class="projects">
-      <h2>Projects</h2>
-      <div class="sep"></div>
-        <div class="card-wrapper">
-          <div *ngFor="let project of projects | async" class="project-card profile-card" (click)="goToDetailPage(project)">
-            <div class="project-card-text">
-              <img src={{project.imageURL}}>
-              <h3>{{project.projectName}}</h3>
-            </div>
-          </div>
-        </div></div>
+  <div class="profile-right">
+    <h2>Projects</h2>
+    <div class="sep"></div>
+    <div class="card-wrapper">
+      <div *ngFor="let project of projects | async" class="profile-card" (click)="goToDetailPage(project)">
+        <div class="profile-card-text">
+          <img src={{project.imageURL}}>
+          <h3>{{project.projectName}}</h3>
+        </div>
+      </div>
     </div>
   </div>
 </div>

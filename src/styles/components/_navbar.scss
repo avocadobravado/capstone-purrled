@@ -27,6 +27,7 @@ nav {
         transition: $transition;
         &:hover {
           opacity: $opacity;
+          animation: purr 50ms 5 alternate ease-in-out;
         }
       }
     }

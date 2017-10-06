@@ -75,8 +75,6 @@
       letter-spacing: $letter-spacing;
       text-transform: uppercase;
       font-weight: 100;
-      // <div class="project-right">
-      //   <h3><span><i class="fa fa-heart-o heart"
       span {
         color: transparent;
         color: $pink;
@@ -87,15 +85,6 @@
           color: $pink;
           -webkit-text-stroke: 1px darken($pink, 5%);
           animation: favorite 750ms infinite alternate ease-in-out;
-          // &::before {
-          //   color: white;
-          //   opacity: 0;
-          //   display: none;
-          // }
-          // &::after {
-          //   content: "\f004";
-          //   font-family: FontAwesome;
-          // }
         }
         &:focus {
           color: green;
@@ -125,11 +114,5 @@
         display: inline;
       }
     }
-  }
-}
-
-@keyframes favorite {
-  50% {
-    transform: rotate(720deg);
   }
 }
