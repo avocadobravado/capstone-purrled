@@ -18,6 +18,7 @@ export class ProjectDetailComponent implements OnInit {
     // Project specific
     projectName;
     projectToDisplay;
+    isFavorited: boolean;
 
     // Profile name
     profile;
@@ -27,7 +28,14 @@ export class ProjectDetailComponent implements OnInit {
       private location: Location,
       private projectService: ProjectService,
       private profileService: ProfileService
-    ) {}
+    ) {
+      if (Math.random() < .5) {
+        this.isFavorited = true;
+      }
+      else {
+        this.isFavorited = false;
+      }
+    }
 
     ngOnInit() {
       this.route.params.forEach((urlParameters) => {
@@ -41,5 +49,8 @@ export class ProjectDetailComponent implements OnInit {
             this.profile = profile;
           });
         });
+  }
+  toggleFavorited() {
+    this.isFavorited = !this.isFavorited;
   }
 }

@@ -22,6 +22,7 @@ import { EditProjectComponent } from './edit-project/edit-project.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ProjectListingComponent } from './project-listing/project-listing.component';
+import { ProcessComponent } from './process/process.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -42,7 +43,8 @@ export const firebaseConfig = {
     EditProjectComponent,
     HomeComponent,
     ProfileComponent,
-    ProjectListingComponent
+    ProjectListingComponent,
+    ProcessComponent
   ],
   imports: [
     BrowserModule,
